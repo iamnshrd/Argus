@@ -93,9 +93,7 @@ async function main() {
 
   document.getElementById("marketLink").href = data.marketUrl;
   setText("observed", integer(data.observed));
-  setText("p10", integer(data.forecast.p10));
   setText("p50", integer(data.forecast.p50));
-  setText("p90", integer(data.forecast.p90));
   setText("last24", integer(data.live.last24h));
   setText("last6", integer(data.live.last6h));
   setText("burst1", integer(data.live.largest1hBurst));
