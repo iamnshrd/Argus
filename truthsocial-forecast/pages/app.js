@@ -98,14 +98,10 @@ async function main() {
   setText("last6", integer(data.live.last6h));
   setText("burst1", integer(data.live.largest1hBurst));
   setText("burst6", integer(data.live.largest6hBurst));
-  setText("week", `${data.week.start} to ${data.week.end} ET`);
+  setText("week", `Week: ${data.week.start} to ${data.week.end} ET`);
 
   const generated = new Date(data.generatedAt);
-  const now = new Date(data.nowEt);
-  setText(
-    "timestamp",
-    `Generated ${generated.toLocaleString()} · model time ${now.toLocaleString()}`,
-  );
+  setText("timestamp", `Updated ${generated.toLocaleString()}`);
 
   renderMarkets(data.markets);
   renderTopics(data.live.topics);
