@@ -785,10 +785,7 @@
 
       async function fetchJson(path) {
         const absoluteUrl = appendCacheBust(`${API_BASE}${path}`);
-        const attempts = [
-          { kind: "direct", url: absoluteUrl },
-          { kind: "jina", url: `${JINA_BASE}${absoluteUrl.replace(/^https?:\/\//, "")}` },
-        ];
+        const attempts = [{ kind: "jina", url: `${JINA_BASE}${absoluteUrl.replace(/^https?:\/\//, "")}` }];
 
         let lastError = null;
         for (const attempt of attempts) {
@@ -895,12 +892,12 @@
       async function loadCandles() {
         const market = state.market;
         if (!market?.ticker) throw new Error("No market selected");
-        const { start, end } = getTimeWindow(market);
+        const { start, end, interval } = getRequestWindow(market);
         const series = deriveSeriesTicker(market);
         const params = new URLSearchParams({
           start_ts: String(Math.floor(start / 1000)),
           end_ts: String(Math.floor(end / 1000)),
-          period_interval: String(state.interval),
+          period_interval: String(interval),
         });
 
         let payload;
@@ -940,6 +937,23 @@
             : end - rangeMs;
 
         return { start: Math.max(0, start), end };
+      }
+
+      function getRequestWindow(market) {
+        const window = getTimeWindow(market);
+        const safeInterval = safeIntervalForWindow(state.interval, window.start, window.end);
+        if (safeInterval !== state.interval) {
+          state.interval = safeInterval;
+          el.interval.value = String(safeInterval);
+          state.intervalTouched = false;
+        }
+        return { ...window, interval: safeInterval };
+      }
+
+      function safeIntervalForWindow(requestedInterval, start, end) {
+        const hours = Math.max(0, (end - start) / (60 * 60 * 1000));
+        if (requestedInterval === 1 && hours > 72) return 60;
+        return requestedInterval;
       }
 
       function normalizeCandle(candle) {
