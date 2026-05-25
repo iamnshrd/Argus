@@ -87,10 +87,7 @@ function renderEvents(events) {
   list.innerHTML = events.map((event) => `<li>${event.date}: ${event.name}</li>`).join("");
 }
 
-async function main() {
-  const response = await fetch(`./data/forecast.json?v=${Date.now()}`, { cache: "no-store" });
-  const data = await response.json();
-
+function renderForecast(data) {
   document.getElementById("marketLink").href = data.marketUrl;
   setText("observed", integer(data.observed));
   setText("p50", integer(data.forecast.p50));
@@ -109,6 +106,28 @@ async function main() {
   renderEvents(data.live.futureEvents);
 }
 
-main().catch((error) => {
+async function loadForecast() {
+  const button = document.getElementById("refreshButton");
+  button.disabled = true;
+  button.textContent = "Refreshing...";
+  setText("timestamp", "Updating...");
+
+  try {
+    const response = await fetch(`./data/forecast.json?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+    renderForecast(await response.json());
+  } finally {
+    button.disabled = false;
+    button.textContent = "Refresh";
+  }
+}
+
+document.getElementById("refreshButton").addEventListener("click", () => {
+  loadForecast().catch((error) => {
+    setText("timestamp", `Failed to refresh forecast data: ${error.message}`);
+  });
+});
+
+loadForecast().catch((error) => {
   setText("timestamp", `Failed to load forecast data: ${error.message}`);
 });

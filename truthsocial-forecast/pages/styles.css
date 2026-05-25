@@ -48,6 +48,13 @@ body {
   margin-bottom: 18px;
 }
 
+.top-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .eyebrow {
   color: var(--accent);
   font-size: 12px;
@@ -84,7 +91,8 @@ p,
   font-size: 13px;
 }
 
-.market-link {
+.market-link,
+.refresh-button {
   color: var(--accent);
   font-size: 14px;
   font-weight: 700;
@@ -93,6 +101,16 @@ p,
   border-radius: 8px;
   padding: 9px 12px;
   background: rgba(73, 209, 139, 0.08);
+}
+
+.refresh-button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.refresh-button:disabled {
+  cursor: wait;
+  opacity: 0.62;
 }
 
 .summary-grid {
