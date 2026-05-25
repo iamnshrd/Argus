@@ -4,3 +4,4 @@ __pycache__/
 truthsocial-forecast/.cache/
 truthsocial-forecast/pages-build/
 pages-build/
+.wrangler/

@@ -1,4 +1,5 @@
 const fmt = new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 });
+const REFRESH_WORKER_URL = "https://argus-truth-refresh.iloveyaphets.workers.dev";
 
 function cents(value) {
   return value === null || value === undefined ? "-" : `${fmt.format(value)}c`;
@@ -107,23 +108,53 @@ function renderForecast(data) {
 }
 
 async function loadForecast() {
+  const response = await fetch(`./data/forecast.json?v=${Date.now()}`, { cache: "no-store" });
+  if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+  const data = await response.json();
+  renderForecast(data);
+  return data;
+}
+
+async function refreshModel() {
   const button = document.getElementById("refreshButton");
   button.disabled = true;
   button.textContent = "Refreshing...";
-  setText("timestamp", "Updating...");
+  const currentGeneratedAt = document.getElementById("timestamp").textContent;
 
   try {
-    const response = await fetch(`./data/forecast.json?v=${Date.now()}`, { cache: "no-store" });
-    if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-    renderForecast(await response.json());
+    if (!REFRESH_WORKER_URL) {
+      setText("timestamp", "Refreshing deployed data...");
+      await loadForecast();
+      return;
+    }
+
+    setText("timestamp", "Triggering model refresh...");
+    const response = await fetch(`${REFRESH_WORKER_URL}/refresh`, { method: "POST" });
+    if (!response.ok) throw new Error(`refresh endpoint failed: ${response.status}`);
+
+    setText("timestamp", "Model refresh queued. Waiting for deploy...");
+    await waitForUpdatedForecast(currentGeneratedAt);
   } finally {
     button.disabled = false;
-    button.textContent = "Refresh";
+    button.textContent = "Refresh model";
   }
 }
 
+async function waitForUpdatedForecast(previousTimestampText) {
+  for (let attempt = 0; attempt < 12; attempt += 1) {
+    await delay(10000);
+    const data = await loadForecast();
+    const generated = new Date(data.generatedAt).toLocaleString();
+    if (`Updated ${generated}` !== previousTimestampText) return;
+  }
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 document.getElementById("refreshButton").addEventListener("click", () => {
-  loadForecast().catch((error) => {
+  refreshModel().catch((error) => {
     setText("timestamp", `Failed to refresh forecast data: ${error.message}`);
   });
 });
