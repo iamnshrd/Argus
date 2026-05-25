@@ -58,7 +58,7 @@
     "p75": 183,
     "p90": 207
   },
-  "generatedAt": "2026-05-25T03:55:47.122816-04:00",
+  "generatedAt": "2026-05-25T04:05:16.140852-04:00",
   "live": {
     "futureEvents": [
       {
@@ -121,91 +121,91 @@
       "noAsk": 97.0,
       "noAskQuantity": 316.67,
       "noBid": 96.0,
-      "noEdgeAtAsk": -0.6,
-      "noFair": 96.4,
+      "noEdgeAtAsk": -1.1,
+      "noFair": 95.9,
       "ticker": "KXTRUTHSOCIAL-26MAY30-T80",
       "yesAsk": 4.0,
       "yesBid": 3.0,
-      "yesEdgeAtAsk": -0.4,
-      "yesFair": 3.6
+      "yesEdgeAtAsk": 0.1,
+      "yesFair": 4.1
     },
     {
       "label": "80-99",
       "noAsk": 93.0,
       "noAskQuantity": 1212.81,
       "noBid": 92.0,
-      "noEdgeAtAsk": -8.3,
-      "noFair": 84.7,
+      "noEdgeAtAsk": -8.4,
+      "noFair": 84.6,
       "ticker": "KXTRUTHSOCIAL-26MAY30-B89",
       "yesAsk": 8.0,
       "yesBid": 7.000000000000001,
-      "yesEdgeAtAsk": 7.3,
-      "yesFair": 15.3
+      "yesEdgeAtAsk": 7.4,
+      "yesFair": 15.4
     },
     {
       "label": "100-119",
       "noAsk": 87.0,
       "noAskQuantity": 47.59,
       "noBid": 86.0,
-      "noEdgeAtAsk": -1.3,
-      "noFair": 85.7,
+      "noEdgeAtAsk": -0.6,
+      "noFair": 86.4,
       "ticker": "KXTRUTHSOCIAL-26MAY30-B109",
       "yesAsk": 14.0,
       "yesBid": 13.0,
-      "yesEdgeAtAsk": 0.3,
-      "yesFair": 14.3
+      "yesEdgeAtAsk": -0.4,
+      "yesFair": 13.6
     },
     {
       "label": "120-139",
       "noAsk": 85.0,
       "noAskQuantity": 541.0,
       "noBid": 84.0,
-      "noEdgeAtAsk": 4.0,
-      "noFair": 89.0,
+      "noEdgeAtAsk": 4.5,
+      "noFair": 89.5,
       "ticker": "KXTRUTHSOCIAL-26MAY30-B129",
       "yesAsk": 16.0,
       "yesBid": 15.0,
-      "yesEdgeAtAsk": -5.0,
-      "yesFair": 11.0
+      "yesEdgeAtAsk": -5.5,
+      "yesFair": 10.5
     },
     {
       "label": "140-159",
       "noAsk": 87.0,
       "noAskQuantity": 399.37,
       "noBid": 86.0,
-      "noEdgeAtAsk": -0.4,
-      "noFair": 86.6,
+      "noEdgeAtAsk": -0.9,
+      "noFair": 86.1,
       "ticker": "KXTRUTHSOCIAL-26MAY30-B149",
       "yesAsk": 14.0,
       "yesBid": 13.0,
-      "yesEdgeAtAsk": -0.6,
-      "yesFair": 13.4
+      "yesEdgeAtAsk": -0.1,
+      "yesFair": 13.9
     },
     {
       "label": "160-179",
       "noAsk": 89.0,
       "noAskQuantity": 509.0,
       "noBid": 88.0,
-      "noEdgeAtAsk": -4.2,
-      "noFair": 84.8,
+      "noEdgeAtAsk": -3.7,
+      "noFair": 85.3,
       "ticker": "KXTRUTHSOCIAL-26MAY30-B169",
       "yesAsk": 12.0,
       "yesBid": 11.0,
-      "yesEdgeAtAsk": 3.2,
-      "yesFair": 15.2
+      "yesEdgeAtAsk": 2.7,
+      "yesFair": 14.7
     },
     {
       "label": "180-199",
       "noAsk": 88.0,
       "noAskQuantity": 234.0,
       "noBid": 87.0,
-      "noEdgeAtAsk": -1.4,
-      "noFair": 86.6,
+      "noEdgeAtAsk": -2.0,
+      "noFair": 86.0,
       "ticker": "KXTRUTHSOCIAL-26MAY30-B189",
       "yesAsk": 13.0,
       "yesBid": 12.0,
-      "yesEdgeAtAsk": 0.4,
-      "yesFair": 13.4
+      "yesEdgeAtAsk": 1.0,
+      "yesFair": 14.0
     },
     {
       "label": "200-220",
@@ -225,16 +225,16 @@
       "noAsk": 87.0,
       "noAskQuantity": 100.0,
       "noBid": 86.0,
-      "noEdgeAtAsk": 7.3,
-      "noFair": 94.3,
+      "noEdgeAtAsk": 7.2,
+      "noFair": 94.2,
       "ticker": "KXTRUTHSOCIAL-26MAY30-T220",
       "yesAsk": 14.0,
       "yesBid": 13.0,
-      "yesEdgeAtAsk": -8.3,
-      "yesFair": 5.7
+      "yesEdgeAtAsk": -8.2,
+      "yesFair": 5.8
     }
   ],
-  "nowEt": "2026-05-25T03:55:39.902521-04:00",
+  "nowEt": "2026-05-25T04:05:08.366499-04:00",
   "observed": 19,
   "warning": null,
   "week": {

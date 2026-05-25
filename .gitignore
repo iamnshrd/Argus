@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 truthsocial-forecast/.cache/
 truthsocial-forecast/pages-build/
+pages-build/

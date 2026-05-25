@@ -30,15 +30,11 @@ jobs:
       - name: Build forecast data
         run: python truthsocial-forecast/build_pages_data.py
       - name: Stage Pages artifact
-        run: |
-          rm -rf truthsocial-forecast/pages-build
-          mkdir -p truthsocial-forecast/pages-build/Trump/Truth
-          cp -R truthsocial-forecast/pages/. truthsocial-forecast/pages-build/Trump/Truth/
-          touch truthsocial-forecast/pages-build/.nojekyll
+        run: bash scripts/build_pages_artifact.sh
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: truthsocial-forecast/pages-build
+          path: pages-build
 
   deploy:
     needs: build
