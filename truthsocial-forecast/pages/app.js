@@ -38,7 +38,6 @@ function renderMarkets(markets) {
           <td>${cents(row.noFair)}</td>
           <td>${cents(row.noBid)} / ${cents(row.noAsk)}</td>
           <td class="${edgeClass(row.noEdgeAtAsk)}">${edge(row.noEdgeAtAsk)}</td>
-          <td>${integer(row.noAskQuantity)}</td>
         </tr>
       `,
     )
