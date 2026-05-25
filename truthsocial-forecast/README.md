@@ -13,7 +13,8 @@ python3 truthsocial-forecast/truthsocial_forecast.py
 ## GitHub Pages
 
 The dashboard in `truthsocial-forecast/pages/` is static. GitHub Actions rebuilds
-`pages/data/forecast.json` every hour and deploys the folder to GitHub Pages.
+`pages/data/forecast.json` every hour and deploys it to
+`https://iamnshrd.github.io/Argus/Trump/Truth/`.
 
 ```bash
 python3 truthsocial-forecast/build_pages_data.py
