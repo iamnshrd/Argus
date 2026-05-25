@@ -89,7 +89,7 @@ function renderEvents(events) {
 }
 
 async function main() {
-  const response = await fetch("./data/forecast.json", { cache: "no-store" });
+  const response = await fetch(`./data/forecast.json?v=${Date.now()}`, { cache: "no-store" });
   const data = await response.json();
 
   document.getElementById("marketLink").href = data.marketUrl;
