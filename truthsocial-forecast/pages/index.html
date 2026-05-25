@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Argus Truth Social Forecast</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">Argus</div>
+          <h1>Truth Social Count Forecast</h1>
+        </div>
+        <a id="marketLink" class="market-link" href="#" target="_blank" rel="noreferrer">Kalshi market</a>
+      </header>
+
+      <section class="summary-grid" aria-label="Forecast summary">
+        <div class="metric">
+          <span>Observed</span>
+          <strong id="observed">-</strong>
+        </div>
+        <div class="metric">
+          <span>p10</span>
+          <strong id="p10">-</strong>
+        </div>
+        <div class="metric primary">
+          <span>p50</span>
+          <strong id="p50">-</strong>
+        </div>
+        <div class="metric">
+          <span>p90</span>
+          <strong id="p90">-</strong>
+        </div>
+        <div class="metric">
+          <span>Last 24h</span>
+          <strong id="last24">-</strong>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>Market Fair Value</h2>
+            <p id="timestamp">Loading forecast data...</p>
+          </div>
+          <div id="week" class="week"></div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Range</th>
+                <th>YES FV</th>
+                <th>YES bid/ask</th>
+                <th>YES edge</th>
+                <th>NO FV</th>
+                <th>NO bid/ask</th>
+                <th>NO edge</th>
+                <th>NO ask size</th>
+              </tr>
+            </thead>
+            <tbody id="marketRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="split">
+        <div class="section">
+          <h2>Live Features</h2>
+          <dl class="feature-list">
+            <div><dt>Last 6h</dt><dd id="last6">-</dd></div>
+            <div><dt>Largest 1h burst</dt><dd id="burst1">-</dd></div>
+            <div><dt>Largest 6h burst</dt><dd id="burst6">-</dd></div>
+          </dl>
+          <h3>Topics So Far</h3>
+          <div id="topics" class="topic-list"></div>
+        </div>
+
+        <div class="section">
+          <h2>Daily Baseline</h2>
+          <div class="table-wrap compact">
+            <table>
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Mean</th>
+                  <th>Median</th>
+                  <th>Range</th>
+                </tr>
+              </thead>
+              <tbody id="dailyRows"></tbody>
+            </table>
+          </div>
+          <h3>Calendar</h3>
+          <ul id="events" class="events"></ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

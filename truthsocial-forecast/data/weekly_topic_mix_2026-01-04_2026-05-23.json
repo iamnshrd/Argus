@@ -1,0 +1,1962 @@
+[
+  {
+    "week_start": "2026-01-04",
+    "total": 172,
+    "topics": {
+      "reposts": {
+        "count": 44,
+        "pct": 25.58
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 12,
+        "pct": 6.98
+      },
+      "video_only": {
+        "count": 50,
+        "pct": 29.07
+      },
+      "campaign_endorsements": {
+        "count": 7,
+        "pct": 4.07
+      },
+      "elections_voting": {
+        "count": 1,
+        "pct": 0.58
+      },
+      "immigration_border": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "economy_trade_tariffs": {
+        "count": 5,
+        "pct": 2.91
+      },
+      "fraud_waste_corruption": {
+        "count": 4,
+        "pct": 2.33
+      },
+      "china": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "iran_middle_east": {
+        "count": 2,
+        "pct": 1.16
+      },
+      "venezuela": {
+        "count": 7,
+        "pct": 4.07
+      },
+      "russia_ukraine": {
+        "count": 2,
+        "pct": 1.16
+      },
+      "media_press": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "courts_legal_investigations": {
+        "count": 5,
+        "pct": 2.91
+      },
+      "democrats_biden": {
+        "count": 4,
+        "pct": 2.33
+      },
+      "congress_gop": {
+        "count": 2,
+        "pct": 1.16
+      },
+      "white_house_admin": {
+        "count": 17,
+        "pct": 9.88
+      },
+      "crime_safety": {
+        "count": 1,
+        "pct": 0.58
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "events_interviews_praise": {
+        "count": 1,
+        "pct": 0.58
+      },
+      "other": {
+        "count": 8,
+        "pct": 4.65
+      }
+    }
+  },
+  {
+    "week_start": "2026-01-11",
+    "total": 69,
+    "topics": {
+      "reposts": {
+        "count": 2,
+        "pct": 2.9
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 12,
+        "pct": 17.39
+      },
+      "video_only": {
+        "count": 3,
+        "pct": 4.35
+      },
+      "campaign_endorsements": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "elections_voting": {
+        "count": 1,
+        "pct": 1.45
+      },
+      "immigration_border": {
+        "count": 3,
+        "pct": 4.35
+      },
+      "economy_trade_tariffs": {
+        "count": 5,
+        "pct": 7.25
+      },
+      "fraud_waste_corruption": {
+        "count": 3,
+        "pct": 4.35
+      },
+      "china": {
+        "count": 2,
+        "pct": 2.9
+      },
+      "iran_middle_east": {
+        "count": 2,
+        "pct": 2.9
+      },
+      "venezuela": {
+        "count": 3,
+        "pct": 4.35
+      },
+      "russia_ukraine": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "media_press": {
+        "count": 2,
+        "pct": 2.9
+      },
+      "courts_legal_investigations": {
+        "count": 3,
+        "pct": 4.35
+      },
+      "democrats_biden": {
+        "count": 3,
+        "pct": 4.35
+      },
+      "congress_gop": {
+        "count": 2,
+        "pct": 2.9
+      },
+      "white_house_admin": {
+        "count": 7,
+        "pct": 10.14
+      },
+      "crime_safety": {
+        "count": 2,
+        "pct": 2.9
+      },
+      "health": {
+        "count": 1,
+        "pct": 1.45
+      },
+      "polls_ratings": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "events_interviews_praise": {
+        "count": 3,
+        "pct": 4.35
+      },
+      "other": {
+        "count": 10,
+        "pct": 14.49
+      }
+    }
+  },
+  {
+    "week_start": "2026-01-18",
+    "total": 291,
+    "topics": {
+      "reposts": {
+        "count": 85,
+        "pct": 29.21
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 20,
+        "pct": 6.87
+      },
+      "video_only": {
+        "count": 72,
+        "pct": 24.74
+      },
+      "campaign_endorsements": {
+        "count": 27,
+        "pct": 9.28
+      },
+      "elections_voting": {
+        "count": 1,
+        "pct": 0.34
+      },
+      "immigration_border": {
+        "count": 8,
+        "pct": 2.75
+      },
+      "economy_trade_tariffs": {
+        "count": 4,
+        "pct": 1.37
+      },
+      "fraud_waste_corruption": {
+        "count": 6,
+        "pct": 2.06
+      },
+      "china": {
+        "count": 6,
+        "pct": 2.06
+      },
+      "iran_middle_east": {
+        "count": 2,
+        "pct": 0.69
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 1,
+        "pct": 0.34
+      },
+      "media_press": {
+        "count": 2,
+        "pct": 0.69
+      },
+      "courts_legal_investigations": {
+        "count": 2,
+        "pct": 0.69
+      },
+      "democrats_biden": {
+        "count": 3,
+        "pct": 1.03
+      },
+      "congress_gop": {
+        "count": 3,
+        "pct": 1.03
+      },
+      "white_house_admin": {
+        "count": 17,
+        "pct": 5.84
+      },
+      "crime_safety": {
+        "count": 2,
+        "pct": 0.69
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 1,
+        "pct": 0.34
+      },
+      "events_interviews_praise": {
+        "count": 4,
+        "pct": 1.37
+      },
+      "other": {
+        "count": 25,
+        "pct": 8.59
+      }
+    }
+  },
+  {
+    "week_start": "2026-01-25",
+    "total": 170,
+    "topics": {
+      "reposts": {
+        "count": 52,
+        "pct": 30.59
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 6,
+        "pct": 3.53
+      },
+      "video_only": {
+        "count": 48,
+        "pct": 28.24
+      },
+      "campaign_endorsements": {
+        "count": 6,
+        "pct": 3.53
+      },
+      "elections_voting": {
+        "count": 2,
+        "pct": 1.18
+      },
+      "immigration_border": {
+        "count": 6,
+        "pct": 3.53
+      },
+      "economy_trade_tariffs": {
+        "count": 3,
+        "pct": 1.76
+      },
+      "fraud_waste_corruption": {
+        "count": 3,
+        "pct": 1.76
+      },
+      "china": {
+        "count": 1,
+        "pct": 0.59
+      },
+      "iran_middle_east": {
+        "count": 2,
+        "pct": 1.18
+      },
+      "venezuela": {
+        "count": 1,
+        "pct": 0.59
+      },
+      "russia_ukraine": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "media_press": {
+        "count": 2,
+        "pct": 1.18
+      },
+      "courts_legal_investigations": {
+        "count": 3,
+        "pct": 1.76
+      },
+      "democrats_biden": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "congress_gop": {
+        "count": 8,
+        "pct": 4.71
+      },
+      "white_house_admin": {
+        "count": 11,
+        "pct": 6.47
+      },
+      "crime_safety": {
+        "count": 2,
+        "pct": 1.18
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "events_interviews_praise": {
+        "count": 3,
+        "pct": 1.76
+      },
+      "other": {
+        "count": 11,
+        "pct": 6.47
+      }
+    }
+  },
+  {
+    "week_start": "2026-02-01",
+    "total": 210,
+    "topics": {
+      "reposts": {
+        "count": 66,
+        "pct": 31.43
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 15,
+        "pct": 7.14
+      },
+      "video_only": {
+        "count": 44,
+        "pct": 20.95
+      },
+      "campaign_endorsements": {
+        "count": 12,
+        "pct": 5.71
+      },
+      "elections_voting": {
+        "count": 4,
+        "pct": 1.9
+      },
+      "immigration_border": {
+        "count": 3,
+        "pct": 1.43
+      },
+      "economy_trade_tariffs": {
+        "count": 7,
+        "pct": 3.33
+      },
+      "fraud_waste_corruption": {
+        "count": 2,
+        "pct": 0.95
+      },
+      "china": {
+        "count": 2,
+        "pct": 0.95
+      },
+      "iran_middle_east": {
+        "count": 5,
+        "pct": 2.38
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "media_press": {
+        "count": 6,
+        "pct": 2.86
+      },
+      "courts_legal_investigations": {
+        "count": 3,
+        "pct": 1.43
+      },
+      "democrats_biden": {
+        "count": 4,
+        "pct": 1.9
+      },
+      "congress_gop": {
+        "count": 2,
+        "pct": 0.95
+      },
+      "white_house_admin": {
+        "count": 7,
+        "pct": 3.33
+      },
+      "crime_safety": {
+        "count": 4,
+        "pct": 1.9
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 2,
+        "pct": 0.95
+      },
+      "events_interviews_praise": {
+        "count": 2,
+        "pct": 0.95
+      },
+      "other": {
+        "count": 20,
+        "pct": 9.52
+      }
+    }
+  },
+  {
+    "week_start": "2026-02-08",
+    "total": 109,
+    "topics": {
+      "reposts": {
+        "count": 24,
+        "pct": 22.02
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 10,
+        "pct": 9.17
+      },
+      "video_only": {
+        "count": 23,
+        "pct": 21.1
+      },
+      "campaign_endorsements": {
+        "count": 10,
+        "pct": 9.17
+      },
+      "elections_voting": {
+        "count": 5,
+        "pct": 4.59
+      },
+      "immigration_border": {
+        "count": 2,
+        "pct": 1.83
+      },
+      "economy_trade_tariffs": {
+        "count": 8,
+        "pct": 7.34
+      },
+      "fraud_waste_corruption": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "china": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "iran_middle_east": {
+        "count": 2,
+        "pct": 1.83
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 2,
+        "pct": 1.83
+      },
+      "media_press": {
+        "count": 1,
+        "pct": 0.92
+      },
+      "courts_legal_investigations": {
+        "count": 5,
+        "pct": 4.59
+      },
+      "democrats_biden": {
+        "count": 1,
+        "pct": 0.92
+      },
+      "congress_gop": {
+        "count": 2,
+        "pct": 1.83
+      },
+      "white_house_admin": {
+        "count": 6,
+        "pct": 5.5
+      },
+      "crime_safety": {
+        "count": 2,
+        "pct": 1.83
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "events_interviews_praise": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "other": {
+        "count": 6,
+        "pct": 5.5
+      }
+    }
+  },
+  {
+    "week_start": "2026-02-15",
+    "total": 146,
+    "topics": {
+      "reposts": {
+        "count": 10,
+        "pct": 6.85
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 30,
+        "pct": 20.55
+      },
+      "video_only": {
+        "count": 14,
+        "pct": 9.59
+      },
+      "campaign_endorsements": {
+        "count": 46,
+        "pct": 31.51
+      },
+      "elections_voting": {
+        "count": 2,
+        "pct": 1.37
+      },
+      "immigration_border": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "economy_trade_tariffs": {
+        "count": 10,
+        "pct": 6.85
+      },
+      "fraud_waste_corruption": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "china": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "iran_middle_east": {
+        "count": 2,
+        "pct": 1.37
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "media_press": {
+        "count": 1,
+        "pct": 0.68
+      },
+      "courts_legal_investigations": {
+        "count": 10,
+        "pct": 6.85
+      },
+      "democrats_biden": {
+        "count": 6,
+        "pct": 4.11
+      },
+      "congress_gop": {
+        "count": 2,
+        "pct": 1.37
+      },
+      "white_house_admin": {
+        "count": 9,
+        "pct": 6.16
+      },
+      "crime_safety": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 1,
+        "pct": 0.68
+      },
+      "events_interviews_praise": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "other": {
+        "count": 3,
+        "pct": 2.05
+      }
+    }
+  },
+  {
+    "week_start": "2026-02-22",
+    "total": 142,
+    "topics": {
+      "reposts": {
+        "count": 11,
+        "pct": 7.75
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 10,
+        "pct": 7.04
+      },
+      "video_only": {
+        "count": 15,
+        "pct": 10.56
+      },
+      "campaign_endorsements": {
+        "count": 32,
+        "pct": 22.54
+      },
+      "elections_voting": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "immigration_border": {
+        "count": 1,
+        "pct": 0.7
+      },
+      "economy_trade_tariffs": {
+        "count": 2,
+        "pct": 1.41
+      },
+      "fraud_waste_corruption": {
+        "count": 6,
+        "pct": 4.23
+      },
+      "china": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "iran_middle_east": {
+        "count": 3,
+        "pct": 2.11
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "media_press": {
+        "count": 6,
+        "pct": 4.23
+      },
+      "courts_legal_investigations": {
+        "count": 6,
+        "pct": 4.23
+      },
+      "democrats_biden": {
+        "count": 11,
+        "pct": 7.75
+      },
+      "congress_gop": {
+        "count": 7,
+        "pct": 4.93
+      },
+      "white_house_admin": {
+        "count": 13,
+        "pct": 9.15
+      },
+      "crime_safety": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "events_interviews_praise": {
+        "count": 1,
+        "pct": 0.7
+      },
+      "other": {
+        "count": 18,
+        "pct": 12.68
+      }
+    }
+  },
+  {
+    "week_start": "2026-03-01",
+    "total": 208,
+    "topics": {
+      "reposts": {
+        "count": 10,
+        "pct": 4.81
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 84,
+        "pct": 40.38
+      },
+      "video_only": {
+        "count": 14,
+        "pct": 6.73
+      },
+      "campaign_endorsements": {
+        "count": 4,
+        "pct": 1.92
+      },
+      "elections_voting": {
+        "count": 6,
+        "pct": 2.88
+      },
+      "immigration_border": {
+        "count": 6,
+        "pct": 2.88
+      },
+      "economy_trade_tariffs": {
+        "count": 8,
+        "pct": 3.85
+      },
+      "fraud_waste_corruption": {
+        "count": 5,
+        "pct": 2.4
+      },
+      "china": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "iran_middle_east": {
+        "count": 16,
+        "pct": 7.69
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 1,
+        "pct": 0.48
+      },
+      "media_press": {
+        "count": 3,
+        "pct": 1.44
+      },
+      "courts_legal_investigations": {
+        "count": 1,
+        "pct": 0.48
+      },
+      "democrats_biden": {
+        "count": 6,
+        "pct": 2.88
+      },
+      "congress_gop": {
+        "count": 6,
+        "pct": 2.88
+      },
+      "white_house_admin": {
+        "count": 16,
+        "pct": 7.69
+      },
+      "crime_safety": {
+        "count": 2,
+        "pct": 0.96
+      },
+      "health": {
+        "count": 2,
+        "pct": 0.96
+      },
+      "polls_ratings": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "events_interviews_praise": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "other": {
+        "count": 18,
+        "pct": 8.65
+      }
+    }
+  },
+  {
+    "week_start": "2026-03-08",
+    "total": 103,
+    "topics": {
+      "reposts": {
+        "count": 10,
+        "pct": 9.71
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 18,
+        "pct": 17.48
+      },
+      "video_only": {
+        "count": 2,
+        "pct": 1.94
+      },
+      "campaign_endorsements": {
+        "count": 6,
+        "pct": 5.83
+      },
+      "elections_voting": {
+        "count": 5,
+        "pct": 4.85
+      },
+      "immigration_border": {
+        "count": 1,
+        "pct": 0.97
+      },
+      "economy_trade_tariffs": {
+        "count": 2,
+        "pct": 1.94
+      },
+      "fraud_waste_corruption": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "china": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "iran_middle_east": {
+        "count": 17,
+        "pct": 16.5
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "media_press": {
+        "count": 3,
+        "pct": 2.91
+      },
+      "courts_legal_investigations": {
+        "count": 6,
+        "pct": 5.83
+      },
+      "democrats_biden": {
+        "count": 2,
+        "pct": 1.94
+      },
+      "congress_gop": {
+        "count": 5,
+        "pct": 4.85
+      },
+      "white_house_admin": {
+        "count": 11,
+        "pct": 10.68
+      },
+      "crime_safety": {
+        "count": 1,
+        "pct": 0.97
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "events_interviews_praise": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "other": {
+        "count": 14,
+        "pct": 13.59
+      }
+    }
+  },
+  {
+    "week_start": "2026-03-15",
+    "total": 79,
+    "topics": {
+      "reposts": {
+        "count": 2,
+        "pct": 2.53
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 10,
+        "pct": 12.66
+      },
+      "video_only": {
+        "count": 6,
+        "pct": 7.59
+      },
+      "campaign_endorsements": {
+        "count": 2,
+        "pct": 2.53
+      },
+      "elections_voting": {
+        "count": 6,
+        "pct": 7.59
+      },
+      "immigration_border": {
+        "count": 2,
+        "pct": 2.53
+      },
+      "economy_trade_tariffs": {
+        "count": 1,
+        "pct": 1.27
+      },
+      "fraud_waste_corruption": {
+        "count": 1,
+        "pct": 1.27
+      },
+      "china": {
+        "count": 1,
+        "pct": 1.27
+      },
+      "iran_middle_east": {
+        "count": 11,
+        "pct": 13.92
+      },
+      "venezuela": {
+        "count": 1,
+        "pct": 1.27
+      },
+      "russia_ukraine": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "media_press": {
+        "count": 2,
+        "pct": 2.53
+      },
+      "courts_legal_investigations": {
+        "count": 4,
+        "pct": 5.06
+      },
+      "democrats_biden": {
+        "count": 3,
+        "pct": 3.8
+      },
+      "congress_gop": {
+        "count": 4,
+        "pct": 5.06
+      },
+      "white_house_admin": {
+        "count": 10,
+        "pct": 12.66
+      },
+      "crime_safety": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "events_interviews_praise": {
+        "count": 1,
+        "pct": 1.27
+      },
+      "other": {
+        "count": 12,
+        "pct": 15.19
+      }
+    }
+  },
+  {
+    "week_start": "2026-03-22",
+    "total": 107,
+    "topics": {
+      "reposts": {
+        "count": 13,
+        "pct": 12.15
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 14,
+        "pct": 13.08
+      },
+      "video_only": {
+        "count": 2,
+        "pct": 1.87
+      },
+      "campaign_endorsements": {
+        "count": 15,
+        "pct": 14.02
+      },
+      "elections_voting": {
+        "count": 5,
+        "pct": 4.67
+      },
+      "immigration_border": {
+        "count": 4,
+        "pct": 3.74
+      },
+      "economy_trade_tariffs": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "fraud_waste_corruption": {
+        "count": 1,
+        "pct": 0.93
+      },
+      "china": {
+        "count": 1,
+        "pct": 0.93
+      },
+      "iran_middle_east": {
+        "count": 7,
+        "pct": 6.54
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 3,
+        "pct": 2.8
+      },
+      "media_press": {
+        "count": 2,
+        "pct": 1.87
+      },
+      "courts_legal_investigations": {
+        "count": 2,
+        "pct": 1.87
+      },
+      "democrats_biden": {
+        "count": 8,
+        "pct": 7.48
+      },
+      "congress_gop": {
+        "count": 9,
+        "pct": 8.41
+      },
+      "white_house_admin": {
+        "count": 4,
+        "pct": 3.74
+      },
+      "crime_safety": {
+        "count": 4,
+        "pct": 3.74
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "events_interviews_praise": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "other": {
+        "count": 13,
+        "pct": 12.15
+      }
+    }
+  },
+  {
+    "week_start": "2026-03-29",
+    "total": 95,
+    "topics": {
+      "reposts": {
+        "count": 6,
+        "pct": 6.32
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 16,
+        "pct": 16.84
+      },
+      "video_only": {
+        "count": 12,
+        "pct": 12.63
+      },
+      "campaign_endorsements": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "elections_voting": {
+        "count": 1,
+        "pct": 1.05
+      },
+      "immigration_border": {
+        "count": 1,
+        "pct": 1.05
+      },
+      "economy_trade_tariffs": {
+        "count": 4,
+        "pct": 4.21
+      },
+      "fraud_waste_corruption": {
+        "count": 5,
+        "pct": 5.26
+      },
+      "china": {
+        "count": 2,
+        "pct": 2.11
+      },
+      "iran_middle_east": {
+        "count": 12,
+        "pct": 12.63
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "media_press": {
+        "count": 1,
+        "pct": 1.05
+      },
+      "courts_legal_investigations": {
+        "count": 8,
+        "pct": 8.42
+      },
+      "democrats_biden": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "congress_gop": {
+        "count": 2,
+        "pct": 2.11
+      },
+      "white_house_admin": {
+        "count": 13,
+        "pct": 13.68
+      },
+      "crime_safety": {
+        "count": 4,
+        "pct": 4.21
+      },
+      "health": {
+        "count": 1,
+        "pct": 1.05
+      },
+      "polls_ratings": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "events_interviews_praise": {
+        "count": 1,
+        "pct": 1.05
+      },
+      "other": {
+        "count": 6,
+        "pct": 6.32
+      }
+    }
+  },
+  {
+    "week_start": "2026-04-05",
+    "total": 122,
+    "topics": {
+      "reposts": {
+        "count": 10,
+        "pct": 8.2
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 8,
+        "pct": 6.56
+      },
+      "video_only": {
+        "count": 6,
+        "pct": 4.92
+      },
+      "campaign_endorsements": {
+        "count": 28,
+        "pct": 22.95
+      },
+      "elections_voting": {
+        "count": 4,
+        "pct": 3.28
+      },
+      "immigration_border": {
+        "count": 1,
+        "pct": 0.82
+      },
+      "economy_trade_tariffs": {
+        "count": 1,
+        "pct": 0.82
+      },
+      "fraud_waste_corruption": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "china": {
+        "count": 1,
+        "pct": 0.82
+      },
+      "iran_middle_east": {
+        "count": 13,
+        "pct": 10.66
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "media_press": {
+        "count": 10,
+        "pct": 8.2
+      },
+      "courts_legal_investigations": {
+        "count": 3,
+        "pct": 2.46
+      },
+      "democrats_biden": {
+        "count": 4,
+        "pct": 3.28
+      },
+      "congress_gop": {
+        "count": 9,
+        "pct": 7.38
+      },
+      "white_house_admin": {
+        "count": 10,
+        "pct": 8.2
+      },
+      "crime_safety": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "health": {
+        "count": 2,
+        "pct": 1.64
+      },
+      "polls_ratings": {
+        "count": 1,
+        "pct": 0.82
+      },
+      "events_interviews_praise": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "other": {
+        "count": 11,
+        "pct": 9.02
+      }
+    }
+  },
+  {
+    "week_start": "2026-04-12",
+    "total": 174,
+    "topics": {
+      "reposts": {
+        "count": 23,
+        "pct": 13.22
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 22,
+        "pct": 12.64
+      },
+      "video_only": {
+        "count": 17,
+        "pct": 9.77
+      },
+      "campaign_endorsements": {
+        "count": 12,
+        "pct": 6.9
+      },
+      "elections_voting": {
+        "count": 1,
+        "pct": 0.57
+      },
+      "immigration_border": {
+        "count": 1,
+        "pct": 0.57
+      },
+      "economy_trade_tariffs": {
+        "count": 7,
+        "pct": 4.02
+      },
+      "fraud_waste_corruption": {
+        "count": 2,
+        "pct": 1.15
+      },
+      "china": {
+        "count": 2,
+        "pct": 1.15
+      },
+      "iran_middle_east": {
+        "count": 16,
+        "pct": 9.2
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 2,
+        "pct": 1.15
+      },
+      "media_press": {
+        "count": 3,
+        "pct": 1.72
+      },
+      "courts_legal_investigations": {
+        "count": 12,
+        "pct": 6.9
+      },
+      "democrats_biden": {
+        "count": 2,
+        "pct": 1.15
+      },
+      "congress_gop": {
+        "count": 4,
+        "pct": 2.3
+      },
+      "white_house_admin": {
+        "count": 19,
+        "pct": 10.92
+      },
+      "crime_safety": {
+        "count": 2,
+        "pct": 1.15
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 1,
+        "pct": 0.57
+      },
+      "events_interviews_praise": {
+        "count": 1,
+        "pct": 0.57
+      },
+      "other": {
+        "count": 25,
+        "pct": 14.37
+      }
+    }
+  },
+  {
+    "week_start": "2026-04-19",
+    "total": 169,
+    "topics": {
+      "reposts": {
+        "count": 33,
+        "pct": 19.53
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 18,
+        "pct": 10.65
+      },
+      "video_only": {
+        "count": 32,
+        "pct": 18.93
+      },
+      "campaign_endorsements": {
+        "count": 1,
+        "pct": 0.59
+      },
+      "elections_voting": {
+        "count": 6,
+        "pct": 3.55
+      },
+      "immigration_border": {
+        "count": 1,
+        "pct": 0.59
+      },
+      "economy_trade_tariffs": {
+        "count": 6,
+        "pct": 3.55
+      },
+      "fraud_waste_corruption": {
+        "count": 2,
+        "pct": 1.18
+      },
+      "china": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "iran_middle_east": {
+        "count": 18,
+        "pct": 10.65
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 2,
+        "pct": 1.18
+      },
+      "media_press": {
+        "count": 6,
+        "pct": 3.55
+      },
+      "courts_legal_investigations": {
+        "count": 4,
+        "pct": 2.37
+      },
+      "democrats_biden": {
+        "count": 3,
+        "pct": 1.78
+      },
+      "congress_gop": {
+        "count": 3,
+        "pct": 1.78
+      },
+      "white_house_admin": {
+        "count": 21,
+        "pct": 12.43
+      },
+      "crime_safety": {
+        "count": 1,
+        "pct": 0.59
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "events_interviews_praise": {
+        "count": 1,
+        "pct": 0.59
+      },
+      "other": {
+        "count": 11,
+        "pct": 6.51
+      }
+    }
+  },
+  {
+    "week_start": "2026-04-26",
+    "total": 88,
+    "topics": {
+      "reposts": {
+        "count": 7,
+        "pct": 7.95
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 18,
+        "pct": 20.45
+      },
+      "video_only": {
+        "count": 5,
+        "pct": 5.68
+      },
+      "campaign_endorsements": {
+        "count": 1,
+        "pct": 1.14
+      },
+      "elections_voting": {
+        "count": 11,
+        "pct": 12.5
+      },
+      "immigration_border": {
+        "count": 1,
+        "pct": 1.14
+      },
+      "economy_trade_tariffs": {
+        "count": 2,
+        "pct": 2.27
+      },
+      "fraud_waste_corruption": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "china": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "iran_middle_east": {
+        "count": 7,
+        "pct": 7.95
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "media_press": {
+        "count": 1,
+        "pct": 1.14
+      },
+      "courts_legal_investigations": {
+        "count": 2,
+        "pct": 2.27
+      },
+      "democrats_biden": {
+        "count": 4,
+        "pct": 4.55
+      },
+      "congress_gop": {
+        "count": 5,
+        "pct": 5.68
+      },
+      "white_house_admin": {
+        "count": 14,
+        "pct": 15.91
+      },
+      "crime_safety": {
+        "count": 1,
+        "pct": 1.14
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "events_interviews_praise": {
+        "count": 3,
+        "pct": 3.41
+      },
+      "other": {
+        "count": 6,
+        "pct": 6.82
+      }
+    }
+  },
+  {
+    "week_start": "2026-05-03",
+    "total": 158,
+    "topics": {
+      "reposts": {
+        "count": 6,
+        "pct": 3.8
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 73,
+        "pct": 46.2
+      },
+      "video_only": {
+        "count": 6,
+        "pct": 3.8
+      },
+      "campaign_endorsements": {
+        "count": 23,
+        "pct": 14.56
+      },
+      "elections_voting": {
+        "count": 3,
+        "pct": 1.9
+      },
+      "immigration_border": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "economy_trade_tariffs": {
+        "count": 5,
+        "pct": 3.16
+      },
+      "fraud_waste_corruption": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "china": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "iran_middle_east": {
+        "count": 5,
+        "pct": 3.16
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 1,
+        "pct": 0.63
+      },
+      "media_press": {
+        "count": 2,
+        "pct": 1.27
+      },
+      "courts_legal_investigations": {
+        "count": 4,
+        "pct": 2.53
+      },
+      "democrats_biden": {
+        "count": 2,
+        "pct": 1.27
+      },
+      "congress_gop": {
+        "count": 2,
+        "pct": 1.27
+      },
+      "white_house_admin": {
+        "count": 12,
+        "pct": 7.59
+      },
+      "crime_safety": {
+        "count": 1,
+        "pct": 0.63
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "events_interviews_praise": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "other": {
+        "count": 13,
+        "pct": 8.23
+      }
+    }
+  },
+  {
+    "week_start": "2026-05-10",
+    "total": 224,
+    "topics": {
+      "reposts": {
+        "count": 40,
+        "pct": 17.86
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 59,
+        "pct": 26.34
+      },
+      "video_only": {
+        "count": 41,
+        "pct": 18.3
+      },
+      "campaign_endorsements": {
+        "count": 2,
+        "pct": 0.89
+      },
+      "elections_voting": {
+        "count": 4,
+        "pct": 1.79
+      },
+      "immigration_border": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "economy_trade_tariffs": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "fraud_waste_corruption": {
+        "count": 2,
+        "pct": 0.89
+      },
+      "china": {
+        "count": 5,
+        "pct": 2.23
+      },
+      "iran_middle_east": {
+        "count": 5,
+        "pct": 2.23
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "media_press": {
+        "count": 3,
+        "pct": 1.34
+      },
+      "courts_legal_investigations": {
+        "count": 11,
+        "pct": 4.91
+      },
+      "democrats_biden": {
+        "count": 4,
+        "pct": 1.79
+      },
+      "congress_gop": {
+        "count": 4,
+        "pct": 1.79
+      },
+      "white_house_admin": {
+        "count": 15,
+        "pct": 6.7
+      },
+      "crime_safety": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 1,
+        "pct": 0.45
+      },
+      "events_interviews_praise": {
+        "count": 1,
+        "pct": 0.45
+      },
+      "other": {
+        "count": 27,
+        "pct": 12.05
+      }
+    }
+  },
+  {
+    "week_start": "2026-05-17",
+    "total": 218,
+    "topics": {
+      "reposts": {
+        "count": 20,
+        "pct": 9.17
+      },
+      "quote_truths": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "image_only": {
+        "count": 85,
+        "pct": 38.99
+      },
+      "video_only": {
+        "count": 17,
+        "pct": 7.8
+      },
+      "campaign_endorsements": {
+        "count": 37,
+        "pct": 16.97
+      },
+      "elections_voting": {
+        "count": 8,
+        "pct": 3.67
+      },
+      "immigration_border": {
+        "count": 3,
+        "pct": 1.38
+      },
+      "economy_trade_tariffs": {
+        "count": 2,
+        "pct": 0.92
+      },
+      "fraud_waste_corruption": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "china": {
+        "count": 2,
+        "pct": 0.92
+      },
+      "iran_middle_east": {
+        "count": 3,
+        "pct": 1.38
+      },
+      "venezuela": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "russia_ukraine": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "media_press": {
+        "count": 2,
+        "pct": 0.92
+      },
+      "courts_legal_investigations": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "democrats_biden": {
+        "count": 2,
+        "pct": 0.92
+      },
+      "congress_gop": {
+        "count": 10,
+        "pct": 4.59
+      },
+      "white_house_admin": {
+        "count": 17,
+        "pct": 7.8
+      },
+      "crime_safety": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "health": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "polls_ratings": {
+        "count": 2,
+        "pct": 0.92
+      },
+      "events_interviews_praise": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "other": {
+        "count": 8,
+        "pct": 3.67
+      }
+    }
+  }
+]

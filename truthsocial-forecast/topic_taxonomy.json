@@ -1,0 +1,250 @@
+[
+  {
+    "label": "campaign_endorsements",
+    "keywords": [
+      "endorse",
+      "endorsed",
+      "endorsement",
+      "complete and total",
+      "strong endorsement",
+      "total endorsement",
+      "running to represent",
+      "candidate for",
+      "re-election",
+      "reelection",
+      "congressional district",
+      "state senate district"
+    ]
+  },
+  {
+    "label": "elections_voting",
+    "keywords": [
+      "election",
+      "primary",
+      "runoff",
+      "ballot",
+      "voter",
+      "voting",
+      "vote",
+      "election integrity",
+      "voter i.d.",
+      "mail-in ballots",
+      "rigged elections"
+    ]
+  },
+  {
+    "label": "immigration_border",
+    "keywords": [
+      "border",
+      "illegal alien",
+      "illegal aliens",
+      "illegal immigration",
+      "immigration",
+      "migrant",
+      "migrants",
+      "ice",
+      "deport",
+      "deportation",
+      "cartel",
+      "asylum"
+    ]
+  },
+  {
+    "label": "economy_trade_tariffs",
+    "keywords": [
+      "economy",
+      "jobs",
+      "inflation",
+      "tariff",
+      "tariffs",
+      "trade",
+      "tax",
+      "taxes",
+      "manufacturing",
+      "market",
+      "stock market",
+      "energy prices",
+      "gas prices"
+    ]
+  },
+  {
+    "label": "fraud_waste_corruption",
+    "keywords": [
+      "fraud",
+      "waste",
+      "corruption",
+      "corrupt",
+      "scam",
+      "stolen",
+      "dirty cop",
+      "somalia fraud",
+      "medicaid fraud"
+    ]
+  },
+  {
+    "label": "china",
+    "keywords": [
+      "china",
+      "chinese",
+      "xi",
+      "beijing",
+      "ccp"
+    ]
+  },
+  {
+    "label": "iran_middle_east",
+    "keywords": [
+      "iran",
+      "tehran",
+      "nuclear",
+      "israel",
+      "hamas",
+      "gaza",
+      "middle east",
+      "hezbollah"
+    ]
+  },
+  {
+    "label": "venezuela",
+    "keywords": [
+      "venezuela",
+      "venezuelan",
+      "maduro",
+      "caracas"
+    ]
+  },
+  {
+    "label": "russia_ukraine",
+    "keywords": [
+      "russia",
+      "russian",
+      "putin",
+      "ukraine",
+      "ukrainian",
+      "zelensky"
+    ]
+  },
+  {
+    "label": "media_press",
+    "keywords": [
+      "fake news",
+      "cnn",
+      "msnbc",
+      "new york times",
+      "washington post",
+      "wall street journal",
+      "fox",
+      "media",
+      "press",
+      "reporter",
+      "journalist"
+    ]
+  },
+  {
+    "label": "courts_legal_investigations",
+    "keywords": [
+      "court",
+      "judge",
+      "lawsuit",
+      "legal",
+      "supreme court",
+      "department of justice",
+      "doj",
+      "fbi",
+      "investigation",
+      "indictment",
+      "trial",
+      "epstein"
+    ]
+  },
+  {
+    "label": "democrats_biden",
+    "keywords": [
+      "biden",
+      "obama",
+      "democrat",
+      "democrats",
+      "radical left",
+      "schumer",
+      "pelosi",
+      "aoc"
+    ]
+  },
+  {
+    "label": "congress_gop",
+    "keywords": [
+      "congress",
+      "senate",
+      "house of representatives",
+      "republican",
+      "republicans",
+      "rino",
+      "speaker",
+      "bill",
+      "legislation"
+    ]
+  },
+  {
+    "label": "white_house_admin",
+    "keywords": [
+      "white house",
+      "executive order",
+      "secretary",
+      "department",
+      "administration",
+      "cabinet",
+      "president",
+      "oval office"
+    ]
+  },
+  {
+    "label": "crime_safety",
+    "keywords": [
+      "crime",
+      "criminal",
+      "murder",
+      "police",
+      "law enforcement",
+      "drug",
+      "drugs",
+      "fentanyl",
+      "violence",
+      "terrorist",
+      "terrorism"
+    ]
+  },
+  {
+    "label": "health",
+    "keywords": [
+      "health",
+      "healthcare",
+      "medicare",
+      "medicaid",
+      "autism",
+      "vaccine",
+      "covid",
+      "hospital"
+    ]
+  },
+  {
+    "label": "polls_ratings",
+    "keywords": [
+      "poll",
+      "polls",
+      "approval",
+      "ratings",
+      "survey"
+    ]
+  },
+  {
+    "label": "events_interviews_praise",
+    "keywords": [
+      "great interview",
+      "thank you",
+      "congratulations",
+      "happy birthday",
+      "wow",
+      "america is back"
+    ]
+  }
+]
