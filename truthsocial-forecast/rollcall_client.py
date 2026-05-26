@@ -6,9 +6,11 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+from zoneinfo import ZoneInfo
 
 
 ROLLCALL_TWITTER_URL = "https://rollcall.com/wp-json/factbase/v1/twitter"
+ET = ZoneInfo("America/New_York")
 
 
 class RollCallError(RuntimeError):
@@ -154,22 +156,7 @@ class RollCallClient:
         if cached is not None:
             return cached
 
-        data = self._get_json(
-            {
-                "platform": "truth social",
-                "sort": "date",
-                "sort_order": "desc",
-                "page": 1,
-                "format": "json",
-                "dateFilter": "custom",
-                "start_date": start.strftime("%m/%d/%Y"),
-                "end_date": end.strftime("%m/%d/%Y"),
-            }
-        )
-        try:
-            count = int(data["meta"]["total_hits"])
-        except (KeyError, TypeError, ValueError) as exc:
-            raise RollCallError("Roll Call response did not include meta.total_hits") from exc
+        count = len(self.truth_social_posts(start, end))
 
         if self.cache and use_cache:
             self.cache.set(start, end, count)
@@ -191,20 +178,12 @@ class RollCallClient:
 
     def truth_social_posts(self, start: date, end: date) -> list[RollCallPost]:
         posts: list[RollCallPost] = []
+        seen_ids: set[str] = set()
         page = 1
         page_count = 1
         while page <= page_count:
             data = self._get_json(
-                {
-                    "platform": "truth social",
-                    "sort": "date",
-                    "sort_order": "desc",
-                    "page": page,
-                    "format": "json",
-                    "dateFilter": "custom",
-                    "start_date": start.strftime("%m/%d/%Y"),
-                    "end_date": end.strftime("%m/%d/%Y"),
-                }
+                self._truth_social_feed_params(page)
             )
             try:
                 page_count = int(data["meta"]["page_count"])
@@ -212,10 +191,31 @@ class RollCallClient:
             except (KeyError, TypeError, ValueError) as exc:
                 raise RollCallError("Roll Call response did not include paginated post data") from exc
 
-            posts.extend(RollCallPost.from_api(row) for row in rows)
+            reached_older_rows = False
+            for row in rows:
+                post = RollCallPost.from_api(row)
+                posted_date = post.posted_at.astimezone(ET).date()
+                if posted_date < start:
+                    reached_older_rows = True
+                    continue
+                if posted_date <= end and post.id not in seen_ids:
+                    posts.append(post)
+                    seen_ids.add(post.id)
+            if reached_older_rows:
+                break
             page += 1
 
         return sorted(posts, key=lambda post: post.posted_at)
+
+    @staticmethod
+    def _truth_social_feed_params(page: int) -> dict[str, object]:
+        return {
+            "platform": "truth social",
+            "sort": "date",
+            "sort_order": "desc",
+            "page": page,
+            "format": "json",
+        }
 
     def _get_json(self, params: dict[str, object]) -> dict:
         request = Request(
