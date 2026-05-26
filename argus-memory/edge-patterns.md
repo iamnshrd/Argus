@@ -1,8 +1,16 @@
 # Argus Edge Patterns
 
+## Reporting / Publishing
+
+- Аналитические отчёты и HTML-страницы для публикации надо писать на русском как базовом языке. Исключение: сами страйки, тикеры/идентификаторы рынков, имена собственные, названия источников, названия внутренних инструментов и фактические теги вроде `Economy` должны оставаться в оригинальной формулировке.
+
 ## Mention Markets
 
+- Canonical order now lives in `argus-memory/market-case-files/mention-market-operating-rules.md`. When edge-pattern notes conflict with that file, follow the operating rules.
+
 - Markets often overprice topic salience and underprice exact wording behavior.
+
+- Active protocol: for pre-event strike analysis, use `argus-memory/market-case-files/mention-market-wording-fv-protocols.md`. First build the wording path, then estimate FV as `Path Activation x Exact Wording Conditional x Countability`.
 
 - Politicians frequently discuss a topic without using the exact market wording.
 
@@ -65,3 +73,11 @@
 - Mention-market edge often comes from structured partial information, not complete information. Waiting for direct pre-event confirmation usually means the price has already moved.
 
 - The absence of a teaser with the exact word is normal, not bearish by itself. It limits certainty only when the rest of the structure is also weak.
+
+- When Николай asks whether an event is "similar to" a prior one, first compare format, phase map, setting, speaker incentives, audience, length, and topic frame. Do not treat the comparison as a claim that exact strike vocabulary transfers.
+
+- In quick pre-event briefs, state the positive event classification directly: e.g. "Format: staged White House policy event." Avoid leading with unnecessary contrast framing like "not a rally, not a trip" unless the contrast itself changes the analysis.
+
+- In live-only mention markets, eligibility can dominate every strike. Before topic or speech-pattern analysis, verify that the event is actually live and qualifies under the market wording. Holiday programming, special programming, prerecorded interviews, guest-host episodes, and "not live" programming notes can create a rules edge where all topical strikes should be treated as NO or non-qualifying, depending on the rules.
+
+- Last-mile format checks matter for recurring TV mention markets. For shows such as Rachel Maddow, check official schedule plus fan/community channels 2-4 hours before air: subreddit programming notes, show-specific forums, Bluesky/X searches for "not live", "off tonight", "special programming", "guest host", and "prerecorded". A C-level source is not proof of content, but it can be a strong trigger to re-open the rules and verify live eligibility.

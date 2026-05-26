@@ -2,6 +2,8 @@
 
 Use for pre-event analysis.
 
+Canonical order: follow `mention-market-operating-rules.md`. The `Eligibility Gate` must be completed before strike-by-strike topic analysis in live-only or speaker-specific markets.
+
 ## Header
 
 - Market:
@@ -27,6 +29,20 @@ Use for pre-event analysis.
 - Context snippets opened:
 - Full transcripts opened, if needed:
 - Automated labels treated as sorting signals only:
+
+## Eligibility Gate
+
+- Market requires live participation:
+- Event is confirmed live:
+- Holiday/special-programming risk checked:
+- Guest host / prerecorded / replay risk:
+- Last-mile format check:
+  - official schedule:
+  - show page / upcoming episode page:
+  - fan/community channels 2-4h before air:
+  - social search:
+- Eligibility conclusion:
+- If eligibility fails, strike analysis status:
 
 ## Resolution Criteria
 
@@ -107,3 +123,13 @@ Use for pre-event analysis.
 - Did the exact word occur?
 - Was the miss/hit due to format, speaker, wording, source freshness, or rules?
 - Memory update needed?
+
+## Fast Brief Minimum
+
+- Eligibility:
+- Format:
+- Exact strike / required speaker:
+- Wording path:
+- Main failure mode:
+- Edge type:
+- Fair range or no-number reason:

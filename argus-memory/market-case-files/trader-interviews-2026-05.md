@@ -110,6 +110,9 @@ Argus application:
 
 Before giving a number:
 
+- Does the event itself qualify under the rules?
+- If live participation is required, is the speaker actually live?
+- Is there holiday, special-programming, guest-host, prerecorded, replay, or archival risk?
 - What exact word/phrase is being resolved?
 - Who must say it?
 - What content counts: live broadcast, stream, promo, archival, reposted clip?
