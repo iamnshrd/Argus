@@ -11,13 +11,14 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from urllib.request import Request, urlopen
 
+from backtest_point import feature_weight, simulate_from_features, week_features
 from live_features import largest_burst
+from regime import classify_regime, extreme_outlier_risk
 from rollcall_client import RollCallClient
 from topic_mix import classify_row, load_topics
 from truthsocial_forecast import (
     APP_DIR,
     ET,
-    KALSHI_EVENT_URL,
     PostHistoryRow,
     bin_probabilities,
     current_week,
@@ -25,7 +26,6 @@ from truthsocial_forecast import (
     elapsed_week_fraction,
     fallback_bins,
     fetch_bins,
-    forecast_totals_from_posts,
     load_post_history,
     percentile,
 )
@@ -135,6 +135,59 @@ def topic_summary(rows: list[PostHistoryRow], taxonomy: Path, limit: int = 8) ->
     ]
 
 
+def grouped_by_week(rows: list[PostHistoryRow]) -> dict[date, list[PostHistoryRow]]:
+    grouped = defaultdict(list)
+    for row in rows:
+        grouped[row.source_week_start].append(row)
+    return grouped
+
+
+def page_forecast_totals(
+    *,
+    current_week_start: date,
+    current_posts: list[PostHistoryRow],
+    history_rows: list[PostHistoryRow],
+    cutoff_seconds: int,
+    topics: list[dict],
+    calendar: list[dict],
+    samples: int,
+) -> tuple[list[int], dict, list[dict], list[float]]:
+    target = week_features(current_week_start, current_posts, cutoff_seconds, topics, calendar, 14)
+    training = [
+        week_features(source_week, rows, cutoff_seconds, topics, calendar, 14)
+        for source_week, rows in grouped_by_week(history_rows).items()
+    ]
+    weights = [feature_weight(candidate, target) for candidate in training]
+    totals = simulate_from_features(
+        target,
+        training,
+        weights,
+        samples,
+        noise_sigma=0.12,
+        tail_overlay=False,
+    )
+    return totals, target, training, weights
+
+
+def nearest_weeks(training: list[dict], weights: list[float], limit: int = 6) -> list[dict]:
+    return [
+        {
+            "week": candidate["week"].isoformat(),
+            "weight": round(weight, 4),
+            "observed": candidate["observed"],
+            "last24": candidate["last24"],
+            "burst6": candidate["burst6"],
+            "actual": candidate["actual"],
+            "remaining": len(candidate["remaining"]),
+        }
+        for candidate, weight in sorted(
+            zip(training, weights),
+            key=lambda item: item[1],
+            reverse=True,
+        )[:limit]
+    ]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build static GitHub Pages data for Truth Social forecast.")
     parser.add_argument("--now")
@@ -151,21 +204,25 @@ def main() -> int:
     now_et = parse_now(args.now)
     week_start, week_end = current_week(now_et)
     event_ticker = args.event_ticker or default_event_ticker(week_end)
+    calendar = load_calendar(args.calendar)
+    topics = load_topics(args.taxonomy)
     rollcall = RollCallClient()
-    observed = rollcall.count_truth_social_posts(week_start, now_et.date(), use_cache=False)
     current_posts = [
         PostHistoryRow(post=post, source_week_start=week_start)
         for post in rollcall.truth_social_posts(week_start, now_et.date())
         if post.posted_at.astimezone(ET) <= now_et
     ]
+    observed = len(current_posts)
     history_rows = load_post_history(args.post_history)
-    totals = forecast_totals_from_posts(
-        posts=history_rows,
-        observed_so_far=observed,
-        phase_fraction=elapsed_week_fraction(now_et, week_start),
+    cutoff_seconds = int(elapsed_week_fraction(now_et, week_start) * 7 * 24 * 60 * 60)
+    totals, target, training, weights = page_forecast_totals(
+        current_week_start=week_start,
+        current_posts=current_posts,
+        history_rows=history_rows,
+        cutoff_seconds=cutoff_seconds,
+        topics=topics,
+        calendar=calendar,
         samples=args.samples,
-        half_life_weeks=8.0,
-        noise_sigma=0.12,
     )
     bins, warning = fetch_bins(event_ticker)
     if not bins:
@@ -196,10 +253,11 @@ def main() -> int:
             }
         )
 
-    calendar = load_calendar(args.calendar)
     events = future_events(calendar, now_et)
     last6 = sum(1 for row in current_posts if now_et - row.post.posted_at.astimezone(ET) <= timedelta(hours=6))
     last24 = sum(1 for row in current_posts if now_et - row.post.posted_at.astimezone(ET) <= timedelta(hours=24))
+    regime, regime_reasons = classify_regime(target)
+    outlier_risk, outlier_reasons = extreme_outlier_risk(target)
 
     data = {
         "generatedAt": datetime.now(ET).isoformat(),
@@ -225,6 +283,14 @@ def main() -> int:
                 {"date": event["date"].isoformat(), "type": event["type"], "name": event["name"]}
                 for event in events[:8]
             ],
+        },
+        "model": {
+            "name": "similarity-weighted live state",
+            "regime": regime,
+            "regimeReasons": regime_reasons,
+            "extremeOutlierRisk": outlier_risk,
+            "extremeOutlierReasons": outlier_reasons,
+            "nearestWeeks": nearest_weeks(training, weights),
         },
         "dailyProfile": daily_profile(history_rows),
         "markets": market_rows,

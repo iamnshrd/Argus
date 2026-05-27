@@ -52,65 +52,59 @@
   ],
   "eventTicker": "KXTRUTHSOCIAL-26MAY30",
   "forecast": {
-    "p10": 89,
-    "p25": 107,
-    "p50": 149,
-    "p75": 183,
-    "p90": 207
+    "p10": 117,
+    "p25": 124,
+    "p50": 142,
+    "p75": 186,
+    "p90": 214
   },
-  "generatedAt": "2026-05-25T04:05:16.140852-04:00",
+  "generatedAt": "2026-05-27T10:36:10.730177-04:00",
   "live": {
-    "futureEvents": [
-      {
-        "date": "2026-05-26",
-        "name": "Texas state runoff",
-        "type": "state_runoff"
-      }
-    ],
-    "largest1hBurst": 5,
-    "largest6hBurst": 9,
-    "last24h": 16,
-    "last6h": 1,
+    "futureEvents": [],
+    "largest1hBurst": 13,
+    "largest6hBurst": 20,
+    "last24h": 25,
+    "last6h": 11,
     "topics": [
       {
-        "count": 7,
-        "share": 0.3684,
+        "count": 30,
+        "share": 0.3371,
         "topic": "image_only"
       },
       {
-        "count": 5,
-        "share": 0.2632,
-        "topic": "white_house_admin"
-      },
-      {
-        "count": 2,
-        "share": 0.1053,
-        "topic": "iran_middle_east"
-      },
-      {
-        "count": 1,
-        "share": 0.0526,
-        "topic": "democrats_biden"
-      },
-      {
-        "count": 1,
-        "share": 0.0526,
+        "count": 17,
+        "share": 0.191,
         "topic": "other"
       },
       {
-        "count": 1,
-        "share": 0.0526,
+        "count": 14,
+        "share": 0.1573,
+        "topic": "white_house_admin"
+      },
+      {
+        "count": 7,
+        "share": 0.0787,
+        "topic": "reposts"
+      },
+      {
+        "count": 6,
+        "share": 0.0674,
         "topic": "courts_legal_investigations"
       },
       {
-        "count": 1,
-        "share": 0.0526,
-        "topic": "campaign_endorsements"
+        "count": 5,
+        "share": 0.0562,
+        "topic": "iran_middle_east"
       },
       {
-        "count": 1,
-        "share": 0.0526,
+        "count": 4,
+        "share": 0.0449,
         "topic": "elections_voting"
+      },
+      {
+        "count": 2,
+        "share": 0.0225,
+        "topic": "campaign_endorsements"
       }
     ]
   },
@@ -118,124 +112,194 @@
   "markets": [
     {
       "label": "<80",
-      "noAsk": 97.0,
-      "noAskQuantity": 316.67,
-      "noBid": 96.0,
-      "noEdgeAtAsk": -1.1,
-      "noFair": 95.9,
+      "noAsk": null,
+      "noAskQuantity": 0,
+      "noBid": 99.0,
+      "noEdgeAtAsk": null,
+      "noFair": 100.0,
       "ticker": "KXTRUTHSOCIAL-26MAY30-T80",
-      "yesAsk": 4.0,
-      "yesBid": 3.0,
-      "yesEdgeAtAsk": 0.1,
-      "yesFair": 4.1
+      "yesAsk": 1.0,
+      "yesBid": null,
+      "yesEdgeAtAsk": -1.0,
+      "yesFair": 0.0
     },
     {
       "label": "80-99",
-      "noAsk": 93.0,
-      "noAskQuantity": 1212.81,
-      "noBid": 92.0,
-      "noEdgeAtAsk": -8.4,
-      "noFair": 84.6,
+      "noAsk": null,
+      "noAskQuantity": 0,
+      "noBid": 99.0,
+      "noEdgeAtAsk": null,
+      "noFair": 100.0,
       "ticker": "KXTRUTHSOCIAL-26MAY30-B89",
-      "yesAsk": 8.0,
-      "yesBid": 7.000000000000001,
-      "yesEdgeAtAsk": 7.4,
-      "yesFair": 15.4
+      "yesAsk": 1.0,
+      "yesBid": null,
+      "yesEdgeAtAsk": -1.0,
+      "yesFair": 0.0
     },
     {
       "label": "100-119",
-      "noAsk": 87.0,
-      "noAskQuantity": 47.59,
-      "noBid": 86.0,
-      "noEdgeAtAsk": -0.6,
-      "noFair": 86.4,
+      "noAsk": 94.0,
+      "noAskQuantity": 13.0,
+      "noBid": 93.0,
+      "noEdgeAtAsk": -8.4,
+      "noFair": 85.6,
       "ticker": "KXTRUTHSOCIAL-26MAY30-B109",
-      "yesAsk": 14.0,
-      "yesBid": 13.0,
-      "yesEdgeAtAsk": -0.4,
-      "yesFair": 13.6
+      "yesAsk": 7.0,
+      "yesBid": 6.0,
+      "yesEdgeAtAsk": 7.4,
+      "yesFair": 14.4
     },
     {
       "label": "120-139",
-      "noAsk": 85.0,
-      "noAskQuantity": 541.0,
-      "noBid": 84.0,
-      "noEdgeAtAsk": 4.5,
-      "noFair": 89.5,
+      "noAsk": 83.0,
+      "noAskQuantity": 2.45,
+      "noBid": 80.0,
+      "noEdgeAtAsk": -17.1,
+      "noFair": 65.9,
       "ticker": "KXTRUTHSOCIAL-26MAY30-B129",
-      "yesAsk": 16.0,
-      "yesBid": 15.0,
-      "yesEdgeAtAsk": -5.5,
-      "yesFair": 10.5
+      "yesAsk": 20.0,
+      "yesBid": 17.0,
+      "yesEdgeAtAsk": 14.1,
+      "yesFair": 34.1
     },
     {
       "label": "140-159",
-      "noAsk": 87.0,
-      "noAskQuantity": 399.37,
-      "noBid": 86.0,
-      "noEdgeAtAsk": -0.9,
-      "noFair": 86.1,
+      "noAsk": 74.0,
+      "noAskQuantity": 14.75,
+      "noBid": 73.0,
+      "noEdgeAtAsk": 16.5,
+      "noFair": 90.5,
       "ticker": "KXTRUTHSOCIAL-26MAY30-B149",
-      "yesAsk": 14.0,
-      "yesBid": 13.0,
-      "yesEdgeAtAsk": -0.1,
-      "yesFair": 13.9
+      "yesAsk": 27.0,
+      "yesBid": 26.0,
+      "yesEdgeAtAsk": -17.5,
+      "yesFair": 9.5
     },
     {
       "label": "160-179",
-      "noAsk": 89.0,
-      "noAskQuantity": 509.0,
-      "noBid": 88.0,
-      "noEdgeAtAsk": -3.7,
-      "noFair": 85.3,
+      "noAsk": 73.0,
+      "noAskQuantity": 14.0,
+      "noBid": 72.0,
+      "noEdgeAtAsk": 15.3,
+      "noFair": 88.3,
       "ticker": "KXTRUTHSOCIAL-26MAY30-B169",
-      "yesAsk": 12.0,
-      "yesBid": 11.0,
-      "yesEdgeAtAsk": 2.7,
-      "yesFair": 14.7
+      "yesAsk": 28.0,
+      "yesBid": 27.0,
+      "yesEdgeAtAsk": -16.3,
+      "yesFair": 11.7
     },
     {
       "label": "180-199",
-      "noAsk": 88.0,
-      "noAskQuantity": 234.0,
-      "noBid": 87.0,
-      "noEdgeAtAsk": -2.0,
-      "noFair": 86.0,
+      "noAsk": 87.0,
+      "noAskQuantity": 14.0,
+      "noBid": 86.0,
+      "noEdgeAtAsk": -1.8,
+      "noFair": 85.2,
       "ticker": "KXTRUTHSOCIAL-26MAY30-B189",
-      "yesAsk": 13.0,
-      "yesBid": 12.0,
-      "yesEdgeAtAsk": 1.0,
-      "yesFair": 14.0
+      "yesAsk": 14.0,
+      "yesBid": 13.0,
+      "yesEdgeAtAsk": 0.8,
+      "yesFair": 14.8
     },
     {
       "label": "200-220",
-      "noAsk": 88.0,
-      "noAskQuantity": 99.47,
-      "noBid": 87.0,
-      "noEdgeAtAsk": 3.9,
-      "noFair": 91.9,
+      "noAsk": 92.0,
+      "noAskQuantity": 99.02,
+      "noBid": 91.0,
+      "noEdgeAtAsk": 1.0,
+      "noFair": 93.0,
       "ticker": "KXTRUTHSOCIAL-26MAY30-B210",
-      "yesAsk": 13.0,
-      "yesBid": 12.0,
-      "yesEdgeAtAsk": -4.9,
-      "yesFair": 8.1
+      "yesAsk": 9.0,
+      "yesBid": 8.0,
+      "yesEdgeAtAsk": -2.0,
+      "yesFair": 7.0
     },
     {
       "label": ">220",
-      "noAsk": 87.0,
-      "noAskQuantity": 100.0,
-      "noBid": 86.0,
-      "noEdgeAtAsk": 7.2,
-      "noFair": 94.2,
+      "noAsk": 93.0,
+      "noAskQuantity": 140.12,
+      "noBid": 92.0,
+      "noEdgeAtAsk": -1.5,
+      "noFair": 91.5,
       "ticker": "KXTRUTHSOCIAL-26MAY30-T220",
-      "yesAsk": 14.0,
-      "yesBid": 13.0,
-      "yesEdgeAtAsk": -8.2,
-      "yesFair": 5.8
+      "yesAsk": 8.0,
+      "yesBid": 7.000000000000001,
+      "yesEdgeAtAsk": 0.5,
+      "yesFair": 8.5
     }
   ],
-  "nowEt": "2026-05-25T04:05:08.366499-04:00",
-  "observed": 19,
+  "model": {
+    "extremeOutlierReasons": [
+      "media/repost mechanics already visible",
+      "already-high live pace"
+    ],
+    "extremeOutlierRisk": "elevated",
+    "name": "similarity-weighted live state",
+    "nearestWeeks": [
+      {
+        "actual": 174,
+        "burst6": 16,
+        "last24": 29,
+        "observed": 74,
+        "remaining": 100,
+        "week": "2026-04-12",
+        "weight": 0.0281
+      },
+      {
+        "actual": 107,
+        "burst6": 20,
+        "last24": 28,
+        "observed": 71,
+        "remaining": 36,
+        "week": "2026-03-22",
+        "weight": 0.0195
+      },
+      {
+        "actual": 79,
+        "burst6": 15,
+        "last24": 18,
+        "observed": 41,
+        "remaining": 38,
+        "week": "2026-03-15",
+        "weight": 0.0083
+      },
+      {
+        "actual": 69,
+        "burst6": 17,
+        "last24": 11,
+        "observed": 46,
+        "remaining": 23,
+        "week": "2026-01-11",
+        "weight": 0.0077
+      },
+      {
+        "actual": 103,
+        "burst6": 14,
+        "last24": 22,
+        "observed": 42,
+        "remaining": 61,
+        "week": "2026-03-08",
+        "weight": 0.0056
+      },
+      {
+        "actual": 169,
+        "burst6": 32,
+        "last24": 28,
+        "observed": 98,
+        "remaining": 71,
+        "week": "2026-04-19",
+        "weight": 0.005
+      }
+    ],
+    "regime": "high_tail",
+    "regimeReasons": [
+      "high observed count",
+      "strong last-24h activity",
+      "large 6h burst"
+    ]
+  },
+  "nowEt": "2026-05-27T10:35:59.613872-04:00",
+  "observed": 89,
   "warning": null,
   "week": {
     "end": "2026-05-30",
