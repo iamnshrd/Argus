@@ -91,7 +91,7 @@ function renderEvents(events) {
 function renderForecast(data) {
   document.getElementById("marketLink").href = data.marketUrl;
   setText("observed", integer(data.observed));
-  setText("p50", integer(data.forecast.p50));
+  setText("p50", integer(data.forecast.mean ?? data.forecast.p50));
   setText("last24", integer(data.live.last24h));
   setText("last6", integer(data.live.last6h));
   setText("burst1", integer(data.live.largest1hBurst));

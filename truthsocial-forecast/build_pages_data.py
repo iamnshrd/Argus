@@ -267,6 +267,7 @@ def main() -> int:
         "week": {"start": week_start.isoformat(), "end": week_end.isoformat()},
         "observed": observed,
         "forecast": {
+            "mean": round(statistics.mean(totals), 1),
             "p10": percentile(totals, 0.10),
             "p25": percentile(totals, 0.25),
             "p50": percentile(totals, 0.50),
