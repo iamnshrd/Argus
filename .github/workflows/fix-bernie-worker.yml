@@ -1,0 +1,133 @@
+name: Fix Bernie Worker Proxy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/fix-bernie-worker.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+env:
+  WORKER_API_BASE: https://kalshi-mentions-api.iloveyaphets.workers.dev/trade-api/v2
+
+concurrency:
+  group: fix-bernie-worker
+  cancel-in-progress: false
+
+jobs:
+  patch-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Patch Bernie candle viewer
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import os
+          import re
+
+          path = Path("site/Bernie/index.html")
+          text = path.read_text(encoding="utf-8")
+          worker_base = os.environ["WORKER_API_BASE"]
+
+          old_constants = '''      const API_BASE = "https://api.elections.kalshi.com/trade-api/v2";
+                const JINA_BASE = "https://r.jina.ai/http://";'''
+          # The file uses six spaces before each const; keep the fallback below in
+          # case spacing was changed by a formatter.
+          text = text.replace(
+              '      const API_BASE = "https://api.elections.kalshi.com/trade-api/v2";\n      const JINA_BASE = "https://r.jina.ai/http://";',
+              f'      const API_BASE = "{worker_base}";',
+          )
+          text = text.replace(
+              '      const API_BASE = "https://external-api.kalshi.com/trade-api/v2";\n      const JINA_BASE = "https://r.jina.ai/http://";',
+              f'      const API_BASE = "{worker_base}";',
+          )
+
+          new_fetch = '''      async function fetchJson(path) {
+                  const url = appendCacheBust(`${API_BASE}${path}`);
+
+                  const response = await fetch(url, {
+                    cache: "no-store",
+                    headers: {
+                      accept: "application/json",
+                    },
+                  });
+
+                  if (!response.ok) {
+                    const body = await response.text().catch(() => "");
+                    throw new Error(
+                      `${response.status} ${response.statusText}${body ? `: ${body.slice(0, 200)}` : ""}`
+                    );
+                  }
+
+                  const payload = await response.json();
+
+                  if (payload?.error) {
+                    throw new Error(payload.error.message || payload.error.code || "Kalshi API error");
+                  }
+
+                  state.source = "worker";
+                  return payload;
+                }
+          '''
+          new_fetch = "\n".join(line[8:] if line.startswith("        ") else line for line in new_fetch.splitlines())
+
+          pattern = re.compile(
+              r"      async function fetchJson\(path\) \{.*?\n      async function loadInput\(value\) \{",
+              re.S,
+          )
+          text, count = pattern.subn(new_fetch.rstrip() + "\n\n      async function loadInput(value) {", text, count=1)
+          if count != 1:
+              raise SystemExit("Could not replace fetchJson block")
+
+          if "JINA_BASE" in text or "r.jina.ai" in text:
+              raise SystemExit("Jina reference still present after patch")
+          if worker_base not in text:
+              raise SystemExit("Worker API base not present after patch")
+
+          path.write_text(text, encoding="utf-8")
+          PY
+
+      - name: Commit patch
+        run: |
+          if git diff --quiet -- site/Bernie/index.html; then
+            echo "No changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/Bernie/index.html
+          git commit -m "Wire Bernie candles through Cloudflare Worker"
+          git push
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build forecast data
+        run: python truthsocial-forecast/build_pages_data.py
+
+      - name: Stage Pages artifact
+        run: bash scripts/build_pages_artifact.sh
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: pages-build
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
