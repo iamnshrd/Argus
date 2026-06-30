@@ -70,6 +70,91 @@ pattern = re.compile(
 text, count = pattern.subn(fetch_block.rstrip() + "\n\n      async function loadInput(value) {", text, count=1)
 if count != 1:
     raise SystemExit("Could not patch Bernie fetchJson block")
+
+resolve_block = '''      async function resolveMarket(ticker) {
+        try {
+          const marketPayload = await fetchJson(`/markets/${encodeURIComponent(ticker)}`);
+          const market = marketPayload.market;
+          let event = null;
+          let markets = [market];
+          if (market?.event_ticker) {
+            try {
+              const eventPayload = await fetchJson(`/events/${encodeURIComponent(market.event_ticker)}`);
+              event = eventPayload.event || null;
+              markets = eventPayload.markets?.length ? eventPayload.markets : markets;
+            } catch (error) {
+              console.warn("Related event load failed", error);
+            }
+          }
+          return { market, event, markets };
+        } catch (marketError) {
+          try {
+            const eventPayload = await fetchJson(`/events/${encodeURIComponent(ticker)}`);
+            const markets = eventPayload.markets || [];
+            if (markets.length) {
+              return {
+                market: pickDefaultMarket(markets),
+                event: eventPayload.event || null,
+                markets,
+              };
+            }
+          } catch (eventError) {
+            console.warn("Event load failed; trying historical markets", eventError);
+          }
+
+          const historicalMarkets = await loadHistoricalMarkets(ticker);
+          if (historicalMarkets.length) {
+            const market = pickDefaultMarket(historicalMarkets);
+            const eventTicker = market?.event_ticker || ticker;
+            return {
+              market,
+              event: {
+                ticker: eventTicker,
+                title: market?.event_title || market?.title || eventTicker,
+                series_ticker: deriveSeriesFromTicker(eventTicker),
+              },
+              markets: historicalMarkets,
+            };
+          }
+
+          throw marketError;
+        }
+      }
+
+      async function loadHistoricalMarkets(ticker) {
+        const encoded = encodeURIComponent(ticker);
+        const paths = [
+          `/historical/markets?event_ticker=${encoded}&limit=200`,
+          `/historical/markets?tickers=${encoded}&limit=1`,
+        ];
+
+        for (const path of paths) {
+          try {
+            const payload = await fetchJson(path);
+            const markets = payload.markets || [];
+            if (markets.length) return markets;
+          } catch (error) {
+            console.warn("Historical market lookup failed", path, error);
+          }
+        }
+        return [];
+      }
+
+      function deriveSeriesFromTicker(ticker) {
+        const eventTicker = String(ticker || "");
+        const datedPrefix = eventTicker.match(/^(.+?)-\d{2}[A-Z]{3}\d{2}/);
+        if (datedPrefix) return datedPrefix[1];
+        return eventTicker.split("-")[0];
+      }
+'''
+resolve_pattern = re.compile(
+    r"      async function resolveMarket\(ticker\) \{.*?\n      function pickDefaultMarket\(markets\) \{",
+    re.S,
+)
+text, count = resolve_pattern.subn(resolve_block.rstrip() + "\n\n      function pickDefaultMarket(markets) {", text, count=1)
+if count != 1:
+    raise SystemExit("Could not patch Bernie resolveMarket block")
+
 if "JINA_BASE" in text or "r.jina.ai" in text:
     raise SystemExit("Jina reference still present after Bernie patch")
 if api_base not in text:
