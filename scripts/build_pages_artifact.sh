@@ -23,55 +23,47 @@ path = Path(os.environ["BERNIE_INDEX"])
 text = path.read_text(encoding="utf-8")
 api_base = os.environ["BERNIE_WORKER_API_BASE"]
 
-text = text.replace(
+for old in [
     '      const API_BASE = "https://api.elections.kalshi.com/trade-api/v2";\n      const JINA_BASE = "https://r.jina.ai/http://";',
-    f'      const API_BASE = "{api_base}";',
-)
-text = text.replace(
     '      const API_BASE = "https://external-api.kalshi.com/trade-api/v2";\n      const JINA_BASE = "https://r.jina.ai/http://";',
-    f'      const API_BASE = "{api_base}";',
-)
-text = text.replace(
     '      const API_BASE = "https://kalshi-mentions-api.iloveyaphets.workers.dev/trade-api/v2";',
-    f'      const API_BASE = "{api_base}";',
-)
+    '      const API_BASE = "https://kalshi-mentions-api.iloveyaphets.workers.dev";',
+]:
+    text = text.replace(old, f'      const API_BASE = "{api_base}";')
 
 fetch_block = '''      async function fetchJson(path) {
-        const url = appendCacheBust(`${API_BASE}${path}`);
-
-        const response = await fetch(url, {
-          cache: "no-store",
-          headers: {
-            accept: "application/json",
-          },
+        const response = await fetch(`${API_BASE}${path}`, {
+          cache: "default",
+          headers: { accept: "application/json" },
         });
-
-        if (!response.ok) {
-          const body = await response.text().catch(() => "");
-          throw new Error(
-            `${response.status} ${response.statusText}${body ? `: ${body.slice(0, 200)}` : ""}`
-          );
+        const body = await response.text();
+        const payload = body ? JSON.parse(body) : null;
+        if (!response.ok || payload?.error) {
+          const detail = payload?.error?.message || payload?.error?.code || body.slice(0, 200) || "API error";
+          const error = new Error(`${response.status} ${response.statusText}: ${detail}`);
+          error.status = response.status;
+          throw error;
         }
-
-        const payload = await response.json();
-
-        if (payload?.error) {
-          throw new Error(payload.error.message || payload.error.code || "Kalshi API error");
-        }
-
         state.source = "worker";
         return payload;
       }
 '''
-pattern = re.compile(
+text, count = re.subn(
     r"      async function fetchJson\(path\) \{.*?\n      async function loadInput\(value\) \{",
-    re.S,
+    fetch_block.rstrip() + "\n\n      async function loadInput(value) {",
+    text,
+    count=1,
+    flags=re.S,
 )
-text, count = pattern.subn(fetch_block.rstrip() + "\n\n      async function loadInput(value) {", text, count=1)
 if count != 1:
-    raise SystemExit("Could not patch Bernie fetchJson block")
+    raise SystemExit("Could not patch fetchJson")
 
 resolve_block = '''      async function resolveMarket(ticker) {
+        if (looksLikeEventTicker(ticker)) {
+          const historicalMarkets = await loadHistoricalMarkets(ticker);
+          if (historicalMarkets.length) return buildHistoricalResolution(ticker, historicalMarkets);
+        }
+
         try {
           const marketPayload = await fetchJson(`/markets/${encodeURIComponent(ticker)}`);
           const market = marketPayload.market;
@@ -88,56 +80,51 @@ resolve_block = '''      async function resolveMarket(ticker) {
           }
           return { market, event, markets };
         } catch (marketError) {
+          if (marketError.status === 429) throw marketError;
           try {
             const eventPayload = await fetchJson(`/events/${encodeURIComponent(ticker)}`);
             const markets = eventPayload.markets || [];
-            if (markets.length) {
-              return {
-                market: pickDefaultMarket(markets),
-                event: eventPayload.event || null,
-                markets,
-              };
-            }
+            if (markets.length) return { market: pickDefaultMarket(markets), event: eventPayload.event || null, markets };
           } catch (eventError) {
+            if (eventError.status === 429) throw eventError;
             console.warn("Event load failed; trying historical markets", eventError);
           }
-
           const historicalMarkets = await loadHistoricalMarkets(ticker);
-          if (historicalMarkets.length) {
-            const market = pickDefaultMarket(historicalMarkets);
-            const eventTicker = market?.event_ticker || ticker;
-            return {
-              market,
-              event: {
-                ticker: eventTicker,
-                title: market?.event_title || market?.title || eventTicker,
-                series_ticker: deriveSeriesFromTicker(eventTicker),
-              },
-              markets: historicalMarkets,
-            };
-          }
-
+          if (historicalMarkets.length) return buildHistoricalResolution(ticker, historicalMarkets);
           throw marketError;
         }
       }
 
       async function loadHistoricalMarkets(ticker) {
         const encoded = encodeURIComponent(ticker);
-        const paths = [
-          `/historical/markets?event_ticker=${encoded}&limit=200`,
-          `/historical/markets?tickers=${encoded}&limit=1`,
-        ];
-
+        const paths = looksLikeEventTicker(ticker)
+          ? [`/historical/markets?event_ticker=${encoded}&limit=200`]
+          : [`/historical/markets?event_ticker=${encoded}&limit=200`, `/historical/markets?tickers=${encoded}&limit=1`];
         for (const path of paths) {
           try {
             const payload = await fetchJson(path);
             const markets = payload.markets || [];
             if (markets.length) return markets;
           } catch (error) {
+            if (error.status === 429) throw error;
             console.warn("Historical market lookup failed", path, error);
           }
         }
         return [];
+      }
+
+      function buildHistoricalResolution(ticker, markets) {
+        const market = pickDefaultMarket(markets);
+        const eventTicker = market?.event_ticker || ticker;
+        return {
+          market,
+          event: { ticker: eventTicker, title: market?.event_title || market?.title || eventTicker, series_ticker: deriveSeriesFromTicker(eventTicker) },
+          markets,
+        };
+      }
+
+      function looksLikeEventTicker(ticker) {
+        return /^KX[A-Z0-9]+-\d{2}[A-Z]{3}\d{2}$/.test(String(ticker || ""));
       }
 
       function deriveSeriesFromTicker(ticker) {
@@ -147,18 +134,43 @@ resolve_block = '''      async function resolveMarket(ticker) {
         return eventTicker.split("-")[0];
       }
 '''
-resolve_pattern = re.compile(
+text, count = re.subn(
     r"      async function resolveMarket\(ticker\) \{.*?\n      function pickDefaultMarket\(markets\) \{",
-    re.S,
+    resolve_block.rstrip() + "\n\n      function pickDefaultMarket(markets) {",
+    text,
+    count=1,
+    flags=re.S,
 )
-text, count = resolve_pattern.subn(resolve_block.rstrip() + "\n\n      function pickDefaultMarket(markets) {", text, count=1)
 if count != 1:
-    raise SystemExit("Could not patch Bernie resolveMarket block")
+    raise SystemExit("Could not patch resolveMarket")
+
+candles_block = '''      async function loadCandles() {
+        const market = state.market;
+        if (!market?.ticker) throw new Error("No market selected");
+        const { start, end, interval } = getRequestWindow(market);
+        const series = deriveSeriesTicker(market);
+        const params = new URLSearchParams({
+          start_ts: String(Math.floor(start / 1000)),
+          end_ts: String(Math.floor(end / 1000)),
+          period_interval: String(interval),
+        });
+        const payload = await fetchJson(`/series/${encodeURIComponent(series)}/markets/${encodeURIComponent(market.ticker)}/candlesticks?${params}`);
+        state.candles = (payload.candlesticks || []).map(normalizeCandle).filter(Boolean);
+        state.plottedCandles = state.candles.map(applySide);
+      }
+'''
+text, count = re.subn(
+    r"      async function loadCandles\(\) \{.*?\n      function getTimeWindow\(market\) \{",
+    candles_block.rstrip() + "\n\n      function getTimeWindow(market) {",
+    text,
+    count=1,
+    flags=re.S,
+)
+if count != 1:
+    raise SystemExit("Could not patch loadCandles")
 
 if "JINA_BASE" in text or "r.jina.ai" in text:
-    raise SystemExit("Jina reference still present after Bernie patch")
-if api_base not in text:
-    raise SystemExit("Worker API base missing after Bernie patch")
+    raise SystemExit("Jina reference still present")
 path.write_text(text, encoding="utf-8")
 PY
 fi
