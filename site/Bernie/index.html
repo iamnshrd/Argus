@@ -649,8 +649,7 @@
     </main>
 
     <script>
-      const API_BASE = "https://api.elections.kalshi.com/trade-api/v2";
-      const JINA_BASE = "https://r.jina.ai/http://";
+      const API_BASE = "https://kalshi-mentions-api.iloveyaphets.workers.dev/trade-api/v2";
       const DEFAULT_TICKER = "KXTRUTHSOCIAL-26MAY30-T220";
 
       const state = {
@@ -784,39 +783,30 @@
       }
 
       async function fetchJson(path) {
-        const absoluteUrl = appendCacheBust(`${API_BASE}${path}`);
-        const attempts = [{ kind: "jina", url: `${JINA_BASE}${absoluteUrl.replace(/^https?:\/\//, "")}` }];
+const url = appendCacheBust(`${API_BASE}${path}`);
 
-        let lastError = null;
-        for (const attempt of attempts) {
-          try {
-            const response = await fetch(attempt.url, {
-              cache: "no-store",
-            });
-            if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-            const text = await response.text();
-            const payload = parseApiPayload(text, attempt.kind);
-            if (payload?.error) {
-              throw new Error(payload.error.message || payload.error.code || "Kalshi API error");
-            }
-            state.source = attempt.kind;
-            return payload;
-          } catch (error) {
-            lastError = error;
-          }
-        }
+const response = await fetch(url, {
+  cache: "no-store",
+  headers: {
+    accept: "application/json",
+  },
+});
 
-        throw lastError || new Error("Request failed");
-      }
+if (!response.ok) {
+  const body = await response.text().catch(() => "");
+  throw new Error(
+    `${response.status} ${response.statusText}${body ? `: ${body.slice(0, 200)}` : ""}`
+  );
+}
 
-      function parseApiPayload(text, kind) {
-        if (kind === "direct") return JSON.parse(text);
-        const marker = "Markdown Content:";
-        const markerIndex = text.indexOf(marker);
-        const content = markerIndex >= 0 ? text.slice(markerIndex + marker.length).trim() : text.trim();
-        const jsonStart = content.search(/[\[{]/);
-        if (jsonStart < 0) throw new Error("Proxy response did not include JSON");
-        return JSON.parse(content.slice(jsonStart));
+const payload = await response.json();
+
+if (payload?.error) {
+  throw new Error(payload.error.message || payload.error.code || "Kalshi API error");
+}
+
+state.source = "worker";
+return payload;
       }
 
       async function loadInput(value) {
