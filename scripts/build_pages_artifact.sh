@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 BUILD_DIR="$ROOT_DIR/pages-build"
-BERNIE_WORKER_API_BASE="https://kalshi-mentions-api.iloveyaphets.workers.dev/trade-api/v2"
+BERNIE_WORKER_API_BASE="https://kalshi-mentions-api.iloveyaphets.workers.dev"
 
 rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
@@ -29,6 +29,10 @@ text = text.replace(
 )
 text = text.replace(
     '      const API_BASE = "https://external-api.kalshi.com/trade-api/v2";\n      const JINA_BASE = "https://r.jina.ai/http://";',
+    f'      const API_BASE = "{api_base}";',
+)
+text = text.replace(
+    '      const API_BASE = "https://kalshi-mentions-api.iloveyaphets.workers.dev/trade-api/v2";',
     f'      const API_BASE = "{api_base}";',
 )
 
